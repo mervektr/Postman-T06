@@ -1,4 +1,4 @@
-# 🎬 TMDb API Test Automation – Postman Project
+# 🎬 TMDB API Test Automation – Postman Project
 
 This project is a comprehensive **test automation suite** designed to test the **TMDb (The Movie Database) API** using **Postman**.  
 It automates API requests and validates responses through functional assertions using Postman test scripts.
