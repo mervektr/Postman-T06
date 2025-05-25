@@ -13,7 +13,7 @@ public class Movies {
     String apiKey = "da1d6ba1d99e4276bbe84887d5f74131";
     String sessionId = "b6d8289bf8cafb8aa7757208fafa63b068b6a45e";
     int mediaId = 550;
-    int listId = 8533125;
+    int listId = 8533156;
 
     @BeforeClass
     public void setup() {
@@ -76,8 +76,6 @@ public class Movies {
     public void addMovieToList() {
         String requestBody = "{ \"media_id\": 550 }";
 
-        System.out.println("Request Body:\n" + requestBody);
-
         Response response = given()
                 .queryParam("api_key", apiKey)
                 .queryParam("session_id", sessionId)
@@ -87,7 +85,7 @@ public class Movies {
                 .post("/list/" + listId + "/add_item")
                 .then()
                 .statusCode(anyOf(equalTo(201)))
-                .body("status_message", containsString("success"))
+                .body("status_message", containsString("The item/record was updated successfully."))
                 .extract().response();
 
         System.out.println("Add to list response:\n" + response.prettyPrint());
