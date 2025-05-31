@@ -57,7 +57,7 @@ public class Movies {
                 .post("/movie/" + mediaId + "/rating")
                 .then()
                 .statusCode(anyOf(equalTo(200), equalTo(201)))
-                .body("status_message", containsString("Success"));
+                .body("status_message", containsString("The item/record was updated successfully"));
     }
 
     @Test
@@ -74,7 +74,7 @@ public class Movies {
 
     @Test
     public void addMovieToList() {
-        String requestBody = "{ \"media_id\": 550 }";
+        String requestBody = "{ \"media_id\": 240 }";
 
         Response response = given()
                 .queryParam("api_key", apiKey)
